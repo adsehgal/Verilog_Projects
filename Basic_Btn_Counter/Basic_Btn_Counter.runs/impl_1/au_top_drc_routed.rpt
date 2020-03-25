@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.1 (win64) Build 2580384 Sat Jun 29 08:12:21 MDT 2019
-| Date         : Wed Mar 25 14:57:39 2020
+| Date         : Thu Mar 26 00:47:32 2020
 | Host         : ADITYASEHGA539D running 64-bit major release  (build 9200)
 | Command      : report_drc -file au_top_drc_routed.rpt -pb au_top_drc_routed.pb -rpx au_top_drc_routed.rpx
 | Design       : au_top
@@ -24,12 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 3
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -44,6 +46,17 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net clks/slowclk/XLXI_40/TC is a gated clock net sourced by a combinational pin clks/slowclk/XLXI_40/I_36_31/O, cell clks/slowclk/XLXI_40/I_36_31. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT clks/slowclk/XLXI_40/I_36_31 is driving clock pin of 12 cells. This could lead to large hold time violations. Involved cells are:
+seven/seg_4_reg[0], seven/seg_4_reg[1], seven/seg_4_reg[2], seven/seg_4_reg[3], seven/sel_reg[0], seven/sel_reg[1], seven/sel_reg[2], seven/sel_reg[3], seven/sel_temp_reg[0], seven/sel_temp_reg[1], seven/sel_temp_reg[2], seven/sel_temp_reg[3]
 Related violations: <none>
 
 

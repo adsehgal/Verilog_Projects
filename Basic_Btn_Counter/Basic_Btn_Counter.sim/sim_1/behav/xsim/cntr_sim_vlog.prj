@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../Basic_Btn_Counter.srcs/sources_1/new/counter_16bit.v" \
 "../../../../Basic_Btn_Counter.srcs/sources_1/new/counter_4bit.v" \
 "../../../../Basic_Btn_Counter.srcs/sim_1/new/cntr_sim.v" \
 

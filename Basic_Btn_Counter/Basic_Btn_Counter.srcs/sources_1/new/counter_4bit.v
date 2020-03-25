@@ -8,8 +8,8 @@ module counter_4bit(
     input dw,       //count down
     input hex_dec,  //select between hex and decimal output -> true=hex, false=dec
     output [3:0] q, //final output
-    output reg UTC,     //up terminal count -> 9 (decimal) OR F (hex)
-    output reg DTC      ///down terminal count -> 0
+    output UTC,     //up terminal count -> 9 (decimal) OR F (hex)
+    output DTC      ///down terminal count -> 0
     );
     
     reg     [7:0] cnt;
@@ -34,25 +34,25 @@ begin
         cnt <= 4'h0;
     else if (up & (cnt >= 4'hF) & hex_dec)   //up limit - hex
     cnt <= 4'h0;
-    else if (cnt > 4'hF)    //abnormal behaviour reset
-        cnt <= 4'h0;
+//    else if (cnt > 4'hF)    //abnormal behaviour reset
+//        cnt <= 4'h0;
     else
         cnt <= cnt;
     
-    //Terminal Count handling
-    if((cnt == 4'd9) & ~hex_dec)
-         UTC <= 1'b1;
-    else if ((cnt == 4'hF) & hex_dec)
-        UTC <= 1'b1;
-    else
-        UTC <= 1'b0;
-        
-    if(cnt == 0)
-        DTC <= 1'b1;
-    else
-        DTC <= 1'b0;
-    
 end 
+    //Terminal Count handling
+//    if((cnt == 4'd9) & ~hex_dec)
+//         UTC <= 1'b1;
+         assign UTC = ((cnt==4'd9) & ~hex_dec) | ((cnt == 4'hF) & hex_dec);
+//    else if ((cnt == 4'hF) & hex_dec)
+//        UTC <= 1'b1;
+//    else
+//        UTC <= 1'b0;
+        assign DTC = cnt == 4'd0;
+//    if(cnt == 0)
+//        DTC <= 1'b1;
+//    else
+//        DTC <= 1'b0;
     
     assign q = cnt;
 endmodule

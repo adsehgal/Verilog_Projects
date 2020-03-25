@@ -2,8 +2,8 @@
 # Vivado v2019.1.1 (64-bit)
 # SW Build 2580384 on Sat Jun 29 08:12:21 MDT 2019
 # IP Build 2579722 on Sat Jun 29 11:35:40 MDT 2019
-# Start of session at: Wed Mar 25 14:56:21 2020
-# Process ID: 9200
+# Start of session at: Thu Mar 26 00:52:15 2020
+# Process ID: 488
 # Current directory: C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.runs/impl_1
 # Command line: vivado.exe -log au_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source au_top.tcl -notrace
 # Log file: C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.runs/impl_1/au_top.vdi

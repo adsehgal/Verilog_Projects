@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tftg256-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,11 +30,14 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_verilog -library xil_defaultlib -sv C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/clk_slow.v
 read_verilog -library xil_defaultlib {
   C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/Edge_Detector.v
+  C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/counter_16bit.v
   C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/counter_4bit.v
   C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/reset_conditioner_1.v
   C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/seven_seg.v
+  C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/seven_seg_sel.v
   C:/Users/adityasehgal/Documents/GitHub/Verilog_Projects/Basic_Btn_Counter/Basic_Btn_Counter.srcs/sources_1/new/au_top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
