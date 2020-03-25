@@ -33,3 +33,10 @@ set_property PACKAGE_PIN P11 [get_ports {clear}]
 set_property PACKAGE_PIN A7 [get_ports {dw}]
     set_property IOSTANDARD LVCMOS33 [get_ports {dw}]
     set_property PULLDOWN true [get_ports {dw}]
+
+set_property PACKAGE_PIN D6 [get_ports {io_dip}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {io_dip}]
+    set_property PULLDOWN true [get_ports {io_dip}]
+    
+
+    

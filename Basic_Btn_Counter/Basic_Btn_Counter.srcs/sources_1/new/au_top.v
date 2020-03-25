@@ -6,6 +6,7 @@ module au_top(
     input up,
     input dw,
     input clear,
+    input io_dip,
     output usb_tx,          // USB->Serial output
     output [6:0] io_seg,
     output [3:0] io_sel
@@ -29,7 +30,7 @@ module au_top(
     reg [3:0] count;
     wire[3:0] countout;
 
-    counter_4bit fourbtcount(.clk(clk), .clear(clear), .up(upbtn), .dw(dwbtn), .q(countout));
+    counter_4bit fourbtcount(.clk(clk), .clear(clear), .up(upbtn), .dw(dwbtn), .q(countout), .hex_dec(io_dip));
     seven_seg sevenseg(.in(countout), .out(io_seg));
     assign io_sel = 4'b1110;
     

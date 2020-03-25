@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.1 (win64) Build 2580384 Sat Jun 29 08:12:21 MDT 2019
-| Date         : Tue Mar 24 19:08:21 2020
+| Date         : Wed Mar 25 14:57:39 2020
 | Host         : ADITYASEHGA539D running 64-bit major release  (build 9200)
 | Command      : report_drc -file au_top_drc_routed.rpt -pb au_top_drc_routed.pb -rpx au_top_drc_routed.rpx
 | Design       : au_top
