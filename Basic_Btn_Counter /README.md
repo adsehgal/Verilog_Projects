@@ -1,5 +1,5 @@
 # 16 Bit Counter
-## Aditya Sehgal
+### Aditya Sehgal
 
 </p>This Verilog porject is a simple 16-bit counter that uses one button to count up, one to count down, one to reset and one switch to determine whether to count in hex or decimal. The project was synthesized and implemented on the Alchitry AU development board thus the specific constraint files.</p>
 </p>I decided to start here since a counter is one of the most basic components of digital hardware, it can be used to keep track of events, divide frequency, cycle through events and of course count. I have previously made a similar counter for a course I took in 2019, however that was focused on strictly using Logic to build a counter. My goal starting now is to fully learn Verilog and use it to its full potential!</p>
