@@ -10,6 +10,7 @@ module seven_seg_sel(
     
     reg [3:0]sel_temp;
     
+    //Anode selector
     always @(posedge clk)
     if (clear == 1'b1)
         sel_temp <= 4'b1000;
@@ -19,10 +20,10 @@ module seven_seg_sel(
                 sel_temp[2]<=sel_temp[3];
                 sel_temp[1]<=sel_temp[2];
                 sel_temp[0]<=sel_temp[1];
-                sel <= ~sel_temp;
+                sel <= sel_temp;
      end
     
-    
+    //split 16 bits and select 4 for 7segment display
     always @(posedge clk)
     begin
         case(sel_temp)

@@ -1,54 +1,8 @@
-//`timescale 1ns / 1ps
-
-
-//module clk_slow(
-//    input clk,
-//    input clear,
-//    output reg clk_50M,
-//    output reg clk_25M,
-//    output reg clk_1M,
-//    output reg clk_60Hz
-//    );
-    
-//    wire [31:0] count;
-//    wire [1:0]UTC;
-    
-//    counter_16bit c1 (.clk(clk), .up(1'b1), .dw(1'b0), .clear(clear | count== 16'hFFFF), .hex_dec(1'b1), .q(count[15:0]), .UTC(UTC[0]));
-//    counter_16bit c2 (.clk(clk), .up(clk & UTC[0]), .dw(1'b0), .clear(clear), .hex_dec(1'b1), .q(count[31:16]), .UTC(UTC[1]));
-
-//    always @(posedge clk)
-//    begin
-//        clk_50M <= count[1];
-//        clk_25M <= count[2];
-//        clk_1M <= count[20];
-//    end
-//endmodule
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/10/2017 11:19:41 AM
-// Design Name: 
-// Module Name: lab5_clks
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 
 module clk_slow(
     input clkin,
-    input greset,  //btnR
+    input greset,
     output clk,
     output digsel,
     output qsec,

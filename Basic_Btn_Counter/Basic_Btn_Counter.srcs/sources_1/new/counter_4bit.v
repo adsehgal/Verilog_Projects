@@ -7,6 +7,8 @@ module counter_4bit(
     input up,       //count up
     input dw,       //count down
     input hex_dec,  //select between hex and decimal output -> true=hex, false=dec
+    input ld,       //load value of Din
+    input [3:0] Din,    //value to be loaded
     output [3:0] q, //final output
     output UTC,     //up terminal count -> 9 (decimal) OR F (hex)
     output DTC      ///down terminal count -> 0
@@ -18,6 +20,8 @@ always @ (posedge clk)
 begin
     if (clear)
         cnt <= 4'h0;
+    else if(ld)
+        cnt <= Din;
     else if (up & (cnt < 4'd9) & ~hex_dec) //count up to 9
         cnt <= cnt + 1;
     else if (up & (cnt < 4'hF) & hex_dec)  //count up to F
@@ -34,25 +38,12 @@ begin
         cnt <= 4'h0;
     else if (up & (cnt >= 4'hF) & hex_dec)   //up limit - hex
     cnt <= 4'h0;
-//    else if (cnt > 4'hF)    //abnormal behaviour reset
-//        cnt <= 4'h0;
     else
         cnt <= cnt;
     
 end 
-    //Terminal Count handling
-//    if((cnt == 4'd9) & ~hex_dec)
-//         UTC <= 1'b1;
-         assign UTC = ((cnt==4'd9) & ~hex_dec) | ((cnt == 4'hF) & hex_dec);
-//    else if ((cnt == 4'hF) & hex_dec)
-//        UTC <= 1'b1;
-//    else
-//        UTC <= 1'b0;
-        assign DTC = cnt == 4'd0;
-//    if(cnt == 0)
-//        DTC <= 1'b1;
-//    else
-//        DTC <= 1'b0;
-    
+
+    assign UTC = ((cnt==4'd9) & ~hex_dec) | ((cnt == 4'hF) & hex_dec);
+    assign DTC = cnt == 4'd0;
     assign q = cnt;
 endmodule
