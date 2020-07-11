@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed May 13 04:05:55 2020
+# Process ID: 21376
+# Current directory: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6376 C:\Users\adity\Documents\GitHub\Verilog_Projects\8x8_Led_Matrix_Cycler\8x8_Led_Matrix_Cycler.xpr
+# Log file: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/vivado.log
+# Journal file: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 720.785 ; gain = 113.809
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:08:05 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:08:05 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:13:45 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:13:46 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:21:02 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:21:03 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:26:28 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:26:28 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:31:40 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:31:40 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
+[Wed May 13 04:36:32 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed May 13 04:38:55 2020] Launched synth_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/synth_1/runme.log
+[Wed May 13 04:38:55 2020] Launched impl_1...
+Run output will be captured here: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 13 04:43:42 2020...
