@@ -1,0 +1,125 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed May 13 20:42:05 2020
+# Process ID: 5856
+# Current directory: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8180 C:\Users\adity\Documents\GitHub\Verilog_Projects\8x8_Led_Matrix_Cycler\8x8_Led_Matrix_Cycler.xpr
+# Log file: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/vivado.log
+# Journal file: C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/adity/Documents/GitHub/Verilog_Projects/8x8_Led_Matrix_Cycler/8x8_Led_Matrix_Cycler.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source top_sim.tcl
+restart
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+restart
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+run all
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+relaunch_sim
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+relaunch_sim
+run 20000 ns
+run 20000 ns
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+restart
+run 20000 ns
+run 20000 ns
+run 20000 ns
+run 20000 ns
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+relaunch_sim
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+run 20000 ns
+relaunch_sim
+relaunch_sim
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+restart
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+relaunch_sim
+run 20000 ns
+relaunch_sim
+run 20000 ns
+run 20000 ns
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
