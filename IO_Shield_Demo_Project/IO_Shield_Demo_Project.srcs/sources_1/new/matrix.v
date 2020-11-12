@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module Matrix(
+module matrix(
     input clk,
     input res_n,
     input usb_rx,
@@ -21,6 +21,7 @@ module Matrix(
        .res_n(res_n),
        .clk_10Hz(clk_s)
         );
+        
     matrix_decode_8x8 decode (
         .led_num(i), 
         .res_n(res_n),
