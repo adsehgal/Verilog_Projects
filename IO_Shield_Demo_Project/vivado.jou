@@ -1,0 +1,118 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Dec 18 23:37:19 2020
+# Process ID: 20996
+# Current directory: C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20836 C:\Users\adity\Documents\GitHub\Verilog_Projects\IO_Shield_Demo_Project\IO_Shield_Demo_Project.xpr
+# Log file: C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/vivado.log
+# Journal file: C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_bd_design "digit_clk"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+export_ip_user_files -of_objects  [get_files C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/bd/digit_clk/digit_clk.bd] -no_script -reset -force -quiet
+remove_files  C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/bd/digit_clk/digit_clk.bd
+file delete -force C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/bd/digit_clk
+file mkdir C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sim_1/new/hz_clk_sim.v w ]
+add_files -fileset sim_1 C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sim_1/new/hz_clk_sim.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top hz_clk_sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source hz_clk_sim.tcl
+run 100000 ns
+run 100000 ns
+relaunch_sim
+run 100000 ns
+restart
+run 100000 ns
+run 100000 ns
+run 100000 ns
+run 100000 ns
+relaunch_sim
+run 100000 ns
+run 100000 ns
+run 100000 ns
+relaunch_sim
+run 100000 ns
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+run 100000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+run all
+relaunch_sim
+run all
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_5M -dir c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {clk_5M} CONFIG.PRIMITIVE {MMCM} CONFIG.ENABLE_CLOCK_MONITOR {false} CONFIG.CLKOUT2_USED {false} CONFIG.CLK_OUT1_PORT {clk_5M} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {5} CONFIG.RESET_TYPE {ACTIVE_LOW} CONFIG.PRIMITIVE {MMCM} CONFIG.CLKOUT1_DRIVES {BUFG} CONFIG.CLKOUT2_DRIVES {BUFG} CONFIG.CLKOUT3_DRIVES {BUFG} CONFIG.CLKOUT4_DRIVES {BUFG} CONFIG.CLKOUT5_DRIVES {BUFG} CONFIG.CLKOUT6_DRIVES {BUFG} CONFIG.CLKOUT7_DRIVES {BUFG} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.USE_LOCKED {true} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_BANDWIDTH {OPTIMIZED} CONFIG.MMCM_CLKFBOUT_MULT_F {32.000} CONFIG.MMCM_CLKIN1_PERIOD {10.000} CONFIG.MMCM_CLKIN2_PERIOD {10.000} CONFIG.MMCM_COMPENSATION {ZHOLD} CONFIG.MMCM_CLKOUT0_DIVIDE_F {128.000} CONFIG.MMCM_CLKOUT1_DIVIDE {1} CONFIG.NUM_OUT_CLKS {1} CONFIG.RESET_PORT {resetn} CONFIG.CLKOUT1_JITTER {631.442} CONFIG.CLKOUT1_PHASE_ERROR {346.848} CONFIG.CLKOUT2_JITTER {636.825} CONFIG.CLKOUT2_PHASE_ERROR {871.302}] [get_ips clk_5M]
+generate_target {instantiation_template} [get_files c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci]
+catch { config_ip_cache -export [get_ips -all clk_5M] }
+export_ip_user_files -of_objects [get_files c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci]
+launch_runs -jobs 4 clk_5M_synth_1
+export_simulation -of_objects [get_files c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci] -directory C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files -ipstatic_source_dir C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/modelsim} {questa=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/questa} {riviera=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/riviera} {activehdl=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.USE_LOCKED {false}] [get_ips clk_5M]
+generate_target all [get_files  c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci]
+catch { config_ip_cache -export [get_ips -all clk_5M] }
+export_ip_user_files -of_objects [get_files c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci] -no_script -sync -force -quiet
+reset_run clk_5M_synth_1
+launch_runs -jobs 4 clk_5M_synth_1
+export_simulation -of_objects [get_files c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M.xci] -directory C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files -ipstatic_source_dir C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/modelsim} {questa=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/questa} {riviera=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/riviera} {activehdl=C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+relaunch_sim
+run 100000 ns
+run all
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+relaunch_sim
+run 100000 ns
+restart
+run 100000 ns
+relaunch_sim
+run 10000 ns
+relaunch_sim
+run 10000 ns
+run all
+relaunch_sim
+run 10000 ns
+run all
+run all
+relaunch_sim
