@@ -14,11 +14,11 @@ module counter_4bit(
     output DTC      ///down terminal count -> 0
     );
     
-    reg     [7:0] cnt;
+    reg     [3:0] cnt;
 
-always @ (posedge clk)
+always @ (posedge clk or negedge clear)
 begin
-    if (clear)
+    if (~clear)
         cnt <= 4'h0;
     else if(ld)
         cnt <= Din;
@@ -37,7 +37,7 @@ begin
     else if (up & (cnt >= 4'd9) & ~hex_dec)  //up limit - dec
         cnt <= 4'h0;
     else if (up & (cnt >= 4'hF) & hex_dec)   //up limit - hex
-    cnt <= 4'h0;
+        cnt <= 4'h0;
     else
         cnt <= cnt;
     

@@ -13,17 +13,17 @@ module Top(
     output [23:0] io_led,   //LED matrix | 0 = bottom right
 
     output [6:0] io_seg,
-    output [3:0] io_sel,
+    output [2:0] io_sel,
     output dp
     
     );
     
-    wire clk_1Hz, clk_5Hz, clk_10Hz;
+    wire clk_1Hz, clk_5Hz, clk_10Hz, clk_60Hz, clk_5M;
     wire rst, digsel, ld, qsec;
     wire [3:0] seven_part;
     wire[15:0] countout;
     wire upbtn, dwbtn, UTC, DTC, btnC;
-    wire clear = io_btn[4];
+//    wire clear = io_btn[4];
     wire [3:0] io_sel_temp;
     
     assign led = 8'h00;      // turn LEDs off
@@ -33,23 +33,26 @@ module Top(
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_conditioner(
                                     .clk(clk),
-                                    .in (~rst_n),
+                                    .in (rst_n),
                                     .out(rst));    
     
     clk_hz slow_me_down(
                         .clk_in     (clk),
-                        .res_n      (rst),
+                        .res_n      (rst_n),
                         .clk_1Hz    (clk_1Hz),
                         .clk_5Hz    (clk_5Hz),
-                        .clk_10Hz   (clk_10Hz)
+                        .clk_10Hz   (clk_10Hz),
+                        .clk_60Hz   (clk_60Hz),
+                        .clk_5M     (clk_5M),
+                        .digsel     (digsel)
     );
     
     counter_16bit sixteenbitcount(
-                                .clk    (clk_1Hz),
-                                .clear  (clear),
-                                .up     (1'b1),
+                                .clk    (clk_5M),
+                                .clear  (rst_n),
+                                .up     (clk_1Hz),
                                 .dw     (1'b0),
-                                .ld     (ld),
+                                .ld     (1'b0),
                                 .Din    (io_dip),
                                 .q      (countout),
                                 .hex_dec(1'b1), //always show hex nums
@@ -58,9 +61,10 @@ module Top(
                                 );
                                 
     seven_seg_sel seven (
-                        .clk    (digsel), 
+                        .clk    (clk_5M), 
+                        .en     (digsel),
                         .in_16  (countout), 
-                        .clear  (clear), 
+                        .clear  (rst_n), 
                         .seg_4  (seven_part), 
                         .sel    (io_sel_temp)
                         );
@@ -71,14 +75,6 @@ module Top(
                         .in (seven_part),
                         .out(io_seg)
                         );
-
-    clk_slow clks (
-                    .clkin  (clk),
-                    .greset (~rst_n),
-                    .clk    (r_clk),
-                    .digsel (digsel),
-                    .qsec   (qsec)
-                    );
     
     assign io_led[15:0] = countout;
     assign io_led[23:16] = {{4{UTC}}, {4{DTC}}};

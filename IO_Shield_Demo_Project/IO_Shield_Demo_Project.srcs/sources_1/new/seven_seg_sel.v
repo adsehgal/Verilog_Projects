@@ -2,6 +2,7 @@
 
 module seven_seg_sel(
     input clk,
+    input en,
     input [15:0] in_16,
     input clear,
     output reg [3:0] seg_4,
@@ -11,21 +12,19 @@ module seven_seg_sel(
     reg [3:0]sel_temp;
     
     //Anode selector
-    always @(posedge clk)
-    if (clear == 1'b1)
-        sel_temp <= 4'b1000;
-    else
-    begin
-                sel_temp[3]<=sel_temp[0];
-                sel_temp[2]<=sel_temp[3];
-                sel_temp[1]<=sel_temp[2];
-                sel_temp[0]<=sel_temp[1];
-                sel <= sel_temp;
-     end
-    
+    always @(posedge clk or negedge clear)begin
+        if (~clear)
+            sel_temp <= 4'b1000;
+        else begin
+                    sel_temp[3]<=sel_temp[0];
+                    sel_temp[2]<=sel_temp[3];
+                    sel_temp[1]<=sel_temp[2];
+                    sel_temp[0]<=sel_temp[1];
+                    sel <= sel_temp;
+         end
+    end
     //split 16 bits and select 4 for 7segment display
-    always @(posedge clk)
-    begin
+    always @(*) begin
         case(sel_temp)
             4'b1000 : seg_4 = in_16[15:12];
             4'b0100 : seg_4 = in_16[11:8];

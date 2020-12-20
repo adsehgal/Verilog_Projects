@@ -26,9 +26,11 @@ module clk_hz(
     output reg clk_1Hz,
     output reg clk_5Hz,
     output reg clk_10Hz,
-    output reg clk_60Hz
+    output reg clk_60Hz,
+    output     clk_5M,
+    output     digsel
     );
-    wire clk_5M;
+//    wire clk_5M;
         clk_5M gen5Mclk
                     (
                     .resetn (res_n),
@@ -42,15 +44,16 @@ module clk_hz(
     localparam Hz10 = 250000;//MHz5 - (MHz5 >> 19); //produce 9Hz actually31'd099998;
     localparam Hz60 = 41666;//MHz5 - (MHz5 >> 16); //produce 76Hz actually //31'd16666;
     reg[31:0] count_1, count_5, count_10, count_60;
+    reg digsel_delay;
     
     always @ (posedge clk_5M or negedge res_n)begin
         if(~res_n)begin
-            count_1 <= 31'b0;
-            count_5 <= 31'b0;
+            count_1  <= 31'b0;
+            count_5  <= 31'b0;
             count_10 <= 31'b0;
             count_60 <= 31'b0;
-            clk_1Hz <= 1'b0;
-            clk_5Hz <= 1'b0;
+            clk_1Hz  <= 1'b0;
+            clk_5Hz  <= 1'b0;
             clk_10Hz <= 1'b0;
             clk_60Hz <= 1'b0;
         end 
@@ -78,7 +81,10 @@ module clk_hz(
                 count_60 <= 0;
             end else
                 count_60 <= count_60 + 1;
+
+            digsel_delay <= clk_60Hz;
         end
     end
+    assign digsel = clk_60Hz & ~digsel_delay;   //edge detect 60Hz to create digsel
         
 endmodule
