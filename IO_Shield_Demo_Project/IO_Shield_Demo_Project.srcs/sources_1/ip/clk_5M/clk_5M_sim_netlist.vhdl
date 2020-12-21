@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Sat Dec 19 01:15:04 2020
 -- Host        : Adi running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top clk_5M -prefix
+--               clk_5M_ clk_5M_sim_netlist.vhdl
 -- Design      : clk_5M
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity clk_5M_clk_5M_clk_wiz is
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of clk_5M_clk_5M_clk_wiz : entity is "clk_5M_clk_wiz";
 end clk_5M_clk_5M_clk_wiz;
 
 architecture STRUCTURE of clk_5M_clk_5M_clk_wiz is
@@ -182,11 +180,11 @@ entity clk_5M is
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
+  attribute NotValidForBitStream : boolean;
+  attribute NotValidForBitStream of clk_5M : entity is true;
 end clk_5M;
 
 architecture STRUCTURE of clk_5M is
-  attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of STRUCTURE : architecture is true;
 begin
 inst: entity work.clk_5M_clk_5M_clk_wiz
      port map (
