@@ -31,7 +31,7 @@ module top_sim();
     wire [7:0] led;
     wire [23:0] io_led;
     wire [6:0] io_seg;
-    wire [3:0] io_sel;
+    wire [2:0] io_sel;
     
     Top DUT (
             .usb_rx     (usb_rx),

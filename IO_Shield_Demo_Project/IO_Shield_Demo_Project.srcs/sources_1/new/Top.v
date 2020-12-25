@@ -24,7 +24,7 @@ module Top(
     wire[11:0] countout;
     wire upbtn, dwbtn, UTC, DTC, btnC;
 //    wire clear = io_btn[4];
-    wire [3:0] io_sel_temp;
+    wire [2:0] io_sel_temp;
     
     assign led = 8'h00;      // turn LEDs off
     assign usb_tx = usb_rx;  // echo the serial data

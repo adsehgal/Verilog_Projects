@@ -42,7 +42,7 @@ module clk_hz(
     localparam Hz1 = 2500000;//MHz5 - (MHz5 >> 22); //produce 0.9Hz actually31'd4999999;
     localparam Hz5 = 500000;//MHz5 - (MHz5 >> 20); //produce 4.5Hz actually31'd0999999;
     localparam Hz10 = 250000;//MHz5 - (MHz5 >> 19); //produce 9Hz actually31'd099998;
-    localparam Hz60 = 41666;//MHz5 - (MHz5 >> 16); //produce 76Hz actually //31'd16666;
+    localparam Hz60 = 25000;//41666;//MHz5 - (MHz5 >> 16); //produce 76Hz actually //31'd16666;
     reg[31:0] count_1, count_5, count_10, count_60;
     reg digsel_delay;
     
