@@ -1,13 +1,13 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Sat Dec 19 01:15:04 2020
+-- Date        : Thu Dec 24 17:57:35 2020
 -- Host        : Adi running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top clk_5M -prefix
---               clk_5M_ clk_5M_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M_stub.vhdl
 -- Design      : clk_5M
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7k70tfbv676-1
+-- Device      : xc7a35tftg256-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

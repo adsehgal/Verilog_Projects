@@ -47,10 +47,18 @@ module Top(
                         .digsel     (digsel)
     );
     
+    //generate pulse for 1Hz, to enable counter every sec
+    reg clk_1Hz_delay;
+    wire tick_1Hz;
+    always @(posedge clk_5M)begin
+        clk_1Hz_delay <= clk_1Hz;
+    end
+    assign tick_1Hz = clk_1Hz & ~clk_1Hz_delay;
+    
     counter_16bit sixteenbitcount(
                                 .clk    (clk_5M),
                                 .clear  (rst_n),
-                                .up     (clk_1Hz),
+                                .up     (tick_1Hz),
                                 .dw     (1'b0),
                                 .ld     (1'b0),
                                 .Din    (io_dip),
@@ -70,13 +78,13 @@ module Top(
                         );
 
     assign io_sel = ~io_sel_temp;
-
+    assign dp = 1'b0;
     seven_seg sevenseg(
                         .in (seven_part),
                         .out(io_seg)
                         );
     
-    assign io_led = 24'hFFFF;//{0, countout};
+    assign io_led = {countout, countout};
 //    assign io_led[23:16] = {{4{UTC}}, {4{DTC}}};
     
 endmodule

@@ -1,14 +1,14 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Dec 19 01:15:04 2020
+// Date        : Thu Dec 24 17:57:35 2020
 // Host        : Adi running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top clk_5M -prefix
-//               clk_5M_ clk_5M_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M_sim_netlist.v
 // Design      : clk_5M
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
-// Device      : xc7k70tfbv676-1
+// Device      : xc7a35tftg256-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
@@ -31,6 +31,7 @@ module clk_5M
         .resetn(resetn));
 endmodule
 
+(* ORIG_REF_NAME = "clk_5M_clk_wiz" *) 
 module clk_5M_clk_5M_clk_wiz
    (clk_5M,
     resetn,

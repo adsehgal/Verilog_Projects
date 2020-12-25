@@ -12,9 +12,9 @@ module seven_seg_sel(
     reg [2:0]sel_temp;
     
     //Anode selector
-    always @(posedge clk or negedge clear)begin
+    always @(posedge (clk & en) or negedge clear)begin
         if (~clear)
-            sel_temp <= 4'b1000;
+            sel_temp <= 3'b100;
         else begin
 //                    sel_temp[3]<=sel_temp[0];
                     sel_temp[1]<=sel_temp[0];
