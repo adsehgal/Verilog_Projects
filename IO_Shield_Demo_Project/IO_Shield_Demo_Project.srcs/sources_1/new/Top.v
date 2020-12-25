@@ -21,7 +21,7 @@ module Top(
     wire clk_1Hz, clk_5Hz, clk_10Hz, clk_60Hz, clk_5M;
     wire rst, digsel, ld, qsec;
     wire [3:0] seven_part;
-    wire[15:0] countout;
+    wire[11:0] countout;
     wire upbtn, dwbtn, UTC, DTC, btnC;
 //    wire clear = io_btn[4];
     wire [3:0] io_sel_temp;
@@ -76,7 +76,7 @@ module Top(
                         .out(io_seg)
                         );
     
-    assign io_led[15:0] = countout;
-    assign io_led[23:16] = {{4{UTC}}, {4{DTC}}};
+    assign io_led = 24'hFFFF;//{0, countout};
+//    assign io_led[23:16] = {{4{UTC}}, {4{DTC}}};
     
 endmodule
