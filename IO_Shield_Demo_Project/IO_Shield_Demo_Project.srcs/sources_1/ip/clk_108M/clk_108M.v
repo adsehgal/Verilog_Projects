@@ -1,4 +1,5 @@
 
+// file: clk_108M.v
 // 
 // (c) Copyright 2008 - 2013 Xilinx, Inc. All rights reserved.
 // 
@@ -55,27 +56,35 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// __clk_5M___5.00000______0.000______50.0______631.442____346.848
-// _clk_40M__106.66667______0.000______50.0______355.424____346.848
+// clk_108M__108.00000______0.000______50.0______127.691_____97.646
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
 // __primary_________100.000____________0.010
 
-// The following must be inserted into your Verilog file for this
-// core to be instantiated. Change the instance name and port connections
-// (in parentheses) to your own signal names.
+`timescale 1ps/1ps
 
-//----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
+(* CORE_GENERATION_INFO = "clk_108M,clk_wiz_v6_0_4_0_0,{component_name=clk_108M,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=1,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=false,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
-  clk_5M instance_name
-   (
-    // Clock out ports
-    .clk_5M(clk_5M),     // output clk_5M
-    .clk_40M(clk_40M),     // output clk_40M
-    // Status and control signals
-    .resetn(resetn), // input resetn
-   // Clock in ports
-    .clk_in1(clk_in1));      // input clk_in1
-// INST_TAG_END ------ End INSTANTIATION Template ---------
+module clk_108M 
+ (
+  // Clock out ports
+  output        clk_108M,
+  // Status and control signals
+  input         resetn,
+ // Clock in ports
+  input         clk_in1
+ );
+
+  clk_108M_clk_wiz inst
+  (
+  // Clock out ports  
+  .clk_108M(clk_108M),
+  // Status and control signals               
+  .resetn(resetn), 
+ // Clock in ports
+  .clk_in1(clk_in1)
+  );
+
+endmodule

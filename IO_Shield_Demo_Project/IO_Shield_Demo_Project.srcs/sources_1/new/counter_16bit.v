@@ -8,8 +8,8 @@ module counter_16bit(
     input dw,       //count down
     input hex_dec,  //select between hex and decimal output -> true=hex, false=dec
     input ld,       //load value of Din
-    input [15:0] Din,   //value to be loaded
-    output [15:0] q, //final output
+    input [11:0] Din,   //value to be loaded
+    output [11:0] q, //final output
     output UTC,     //up terminal count -> 9 (decimal) OR F (hex)
     output DTC      ///down terminal count -> 0
     );
@@ -28,10 +28,10 @@ module counter_16bit(
     .clk(clk), .clear(clear), .up(up & (&UTC_t[1:0])), .dw(dw & (&DTC_t[1:0])), .ld(ld), 
     .Din(Din[11:8]), .hex_dec(hex_dec), .q(q[11:8]), .UTC(UTC_t[2]), .DTC(DTC_t[2])
     );
-    counter_4bit fifteen_twelve (
-    .clk(clk), .clear(clear), .up(up & (&UTC_t[2:0])), .dw(dw & (&DTC_t[2:0])), .ld(ld), 
-    .Din(Din[15:12]), .hex_dec(hex_dec), .q(q[15:12]), .UTC(UTC_t[3]), .DTC(DTC_t[3])
-    );
+//    counter_4bit fifteen_twelve (
+//    .clk(clk), .clear(clear), .up(up & (&UTC_t[2:0])), .dw(dw & (&DTC_t[2:0])), .ld(ld), 
+//    .Din(Din[15:12]), .hex_dec(hex_dec), .q(q[15:12]), .UTC(UTC_t[3]), .DTC(DTC_t[3])
+//    );
     
 
     assign UTC = &UTC_t;

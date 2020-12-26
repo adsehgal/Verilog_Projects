@@ -55,8 +55,7 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// __clk_5M___5.00000______0.000______50.0______631.442____346.848
-// _clk_40M__106.66667______0.000______50.0______355.424____346.848
+// clk_108M__108.00000______0.000______50.0______127.691_____97.646
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -69,11 +68,10 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 
-  clk_5M instance_name
+  clk_108M instance_name
    (
     // Clock out ports
-    .clk_5M(clk_5M),     // output clk_5M
-    .clk_40M(clk_40M),     // output clk_40M
+    .clk_108M(clk_108M),     // output clk_108M
     // Status and control signals
     .resetn(resetn), // input resetn
    // Clock in ports

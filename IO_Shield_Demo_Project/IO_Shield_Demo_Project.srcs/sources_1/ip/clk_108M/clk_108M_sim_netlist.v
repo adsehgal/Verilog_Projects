@@ -1,11 +1,11 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri Dec 25 23:14:09 2020
+// Date        : Sat Dec 26 00:08:48 2020
 // Host        : Adi running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_5M/clk_5M_sim_netlist.v
-// Design      : clk_5M
+//               c:/Users/adity/Documents/GitHub/Verilog_Projects/IO_Shield_Demo_Project/IO_Shield_Demo_Project.srcs/sources_1/ip/clk_108M/clk_108M_sim_netlist.v
+// Design      : clk_108M
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a35tftg256-2
@@ -13,53 +13,46 @@
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
-module clk_5M
-   (clk_5M,
-    clk_40M,
+module clk_108M
+   (clk_108M,
     resetn,
     clk_in1);
-  output clk_5M;
-  output clk_40M;
+  output clk_108M;
   input resetn;
   input clk_in1;
 
-  wire clk_40M;
-  wire clk_5M;
+  wire clk_108M;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire resetn;
 
-  clk_5M_clk_5M_clk_wiz inst
-       (.clk_40M(clk_40M),
-        .clk_5M(clk_5M),
+  clk_108M_clk_108M_clk_wiz inst
+       (.clk_108M(clk_108M),
         .clk_in1(clk_in1),
         .resetn(resetn));
 endmodule
 
-(* ORIG_REF_NAME = "clk_5M_clk_wiz" *) 
-module clk_5M_clk_5M_clk_wiz
-   (clk_5M,
-    clk_40M,
+(* ORIG_REF_NAME = "clk_108M_clk_wiz" *) 
+module clk_108M_clk_108M_clk_wiz
+   (clk_108M,
     resetn,
     clk_in1);
-  output clk_5M;
-  output clk_40M;
+  output clk_108M;
   input resetn;
   input clk_in1;
 
-  wire clk_40M;
-  wire clk_40M_clk_5M;
-  wire clk_5M;
-  wire clk_5M_clk_5M;
+  wire clk_108M;
+  wire clk_108M_clk_108M;
   wire clk_in1;
-  wire clk_in1_clk_5M;
-  wire clkfbout_buf_clk_5M;
-  wire clkfbout_clk_5M;
+  wire clk_in1_clk_108M;
+  wire clkfbout_buf_clk_108M;
+  wire clkfbout_clk_108M;
   wire reset_high;
   wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
@@ -75,8 +68,8 @@ module clk_5M_clk_5M_clk_wiz
 
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkf_buf
-       (.I(clkfbout_clk_5M),
-        .O(clkfbout_buf_clk_5M));
+       (.I(clkfbout_clk_108M),
+        .O(clkfbout_buf_clk_108M));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
@@ -85,28 +78,24 @@ module clk_5M_clk_5M_clk_wiz
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
        (.I(clk_in1),
-        .O(clk_in1_clk_5M));
+        .O(clk_in1_clk_108M));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
-       (.I(clk_5M_clk_5M),
-        .O(clk_5M));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout2_buf
-       (.I(clk_40M_clk_5M),
-        .O(clk_40M));
+       (.I(clk_108M_clk_108M),
+        .O(clk_108M));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(32.000000),
+    .CLKFBOUT_MULT_F(10.125000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(128.000000),
+    .CLKOUT0_DIVIDE_F(9.375000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(6),
+    .CLKOUT1_DIVIDE(1),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
@@ -132,7 +121,7 @@ module clk_5M_clk_5M_clk_wiz
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
     .COMPENSATION("ZHOLD"),
-    .DIVCLK_DIVIDE(5),
+    .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),
     .IS_PSINCDEC_INVERTED(1'b0),
@@ -145,17 +134,17 @@ module clk_5M_clk_5M_clk_wiz
     .SS_MOD_PERIOD(10000),
     .STARTUP_WAIT("FALSE")) 
     mmcm_adv_inst
-       (.CLKFBIN(clkfbout_buf_clk_5M),
-        .CLKFBOUT(clkfbout_clk_5M),
+       (.CLKFBIN(clkfbout_buf_clk_108M),
+        .CLKFBOUT(clkfbout_clk_108M),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_clk_5M),
+        .CLKIN1(clk_in1_clk_108M),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_5M_clk_5M),
+        .CLKOUT0(clk_108M_clk_108M),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_40M_clk_5M),
+        .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
