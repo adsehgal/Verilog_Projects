@@ -7,7 +7,7 @@ module hz_clk_sim;
     wire clk_1Hz;
     wire clk_5Hz;
     wire clk_10Hz;
-    wire clk_60Hz;
+    wire clk_1K;
     wire digsel;
     
     clk_hz DUT (
@@ -16,7 +16,7 @@ module hz_clk_sim;
                 .clk_1Hz(clk_1Hz),
                 .clk_5Hz(clk_5Hz),
                 .clk_10Hz(clk_10Hz),
-                .clk_60Hz(clk_60Hz),
+                .clk_1K(clk_1K),
                 .digsel(digsel)
                 );
                 

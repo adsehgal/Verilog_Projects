@@ -3,7 +3,7 @@
 module seven_seg_sel(
     input clk,
     input en,
-    input [12:0] in_16,
+    input [11:0] in_16,
     input clear,
     output reg [3:0] seg_4,
     output reg [2:0] sel
@@ -29,10 +29,11 @@ module seven_seg_sel(
     end
     //split 16 bits and select 4 for 7segment display
     always @(*) begin
-        case(sel_temp)
-            3'b100 : seg_4 = in_16[11:8];
-            3'b010 : seg_4 = in_16[7:4];
-            3'b001 : seg_4 = in_16[3:0];
+        case({clear, sel})
+            4'b0_XXX : seg_4 = 4'h0;
+            4'b1_100 : seg_4 = in_16[11:8];
+            4'b1_010 : seg_4 = in_16[7:4];
+            4'b1_001 : seg_4 = in_16[3:0];
             default : seg_4 = 4'b0000;
         endcase
     end

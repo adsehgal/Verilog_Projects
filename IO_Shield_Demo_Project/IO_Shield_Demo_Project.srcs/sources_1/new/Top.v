@@ -18,7 +18,7 @@ module Top(
     
     );
     
-    wire clk_1Hz, clk_5Hz, clk_10Hz, clk_60Hz, clk_5M;
+    wire clk_1Hz, clk_5Hz, clk_10Hz, clk_1K, clk_5M;
     wire rst, digsel, ld, qsec;
     wire [3:0] seven_part;
     wire[11:0] countout;
@@ -42,7 +42,7 @@ module Top(
                         .clk_1Hz    (clk_1Hz),
                         .clk_5Hz    (clk_5Hz),
                         .clk_10Hz   (clk_10Hz),
-                        .clk_60Hz   (clk_60Hz),
+                        .clk_1K     (clk_1K),
                         .clk_5M     (clk_5M),
                         .digsel     (digsel)
     );
@@ -58,7 +58,8 @@ module Top(
     counter_16bit sixteenbitcount(
                                 .clk    (clk_5M),
                                 .clear  (rst_n),
-                                .up     (tick_1Hz),
+//                                .up     (1'b1), //sim
+                                .up     (tick_1Hz),   //deploy
                                 .dw     (1'b0),
                                 .ld     (1'b0),
                                 .Din    (io_dip),
@@ -69,17 +70,19 @@ module Top(
                                 );
                                 
     seven_seg_sel seven (
-                        .clk    (clk_5M), 
+//                        .clk    (clk), //for sim
+//                        .en     (1'b1),
+                        .clk    (clk_5M), // for deploy
                         .en     (digsel),
                         .in_16  (countout), 
                         .clear  (rst_n), 
                         .seg_4  (seven_part), 
                         .sel    (io_sel_temp)
                         );
-
     assign io_sel = ~io_sel_temp;
     assign dp = 1'b0;
     seven_seg sevenseg(
+                        .clk (clk_5M),
                         .in (seven_part),
                         .out(io_seg)
                         );
