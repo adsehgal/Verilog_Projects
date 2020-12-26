@@ -58,8 +58,7 @@ module Top(
     counter_16bit sixteenbitcount(
                                 .clk    (clk_5M),
                                 .clear  (rst_n),
-//                                .up     (1'b1), //sim
-                                .up     (tick_1Hz),   //deploy
+                                .up     (tick_1Hz),
                                 .dw     (1'b0),
                                 .ld     (1'b0),
                                 .Din    (io_dip),
@@ -70,9 +69,7 @@ module Top(
                                 );
                                 
     seven_seg_sel seven (
-//                        .clk    (clk), //for sim
-//                        .en     (1'b1),
-                        .clk    (clk_5M), // for deploy
+                        .clk    (clk_5M),
                         .en     (digsel),
                         .in_16  (countout), 
                         .clear  (rst_n), 
@@ -86,8 +83,12 @@ module Top(
                         .in (seven_part),
                         .out(io_seg)
                         );
-    
-    assign io_led = {countout, countout};
-//    assign io_led[23:16] = {{4{UTC}}, {4{DTC}}};
+    matrix_cntrl(
+                .clk    (clk_5M),
+                .res_n  (rst_n),
+                .en     (clk_1K),
+                .led    (io_led)
+                );
+//    assign io_led = {countout, countout};
     
 endmodule
